@@ -1,3 +1,5 @@
+import {cart} from '../data/cart.js'; //to avoid naming conflicts we put {card as exampleName}
+
 let productsHTML = '';
 
 products.forEach((product) => {
