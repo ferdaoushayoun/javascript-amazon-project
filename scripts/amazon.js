@@ -1,4 +1,5 @@
 import {cart} from '../data/cart.js'; //to avoid naming conflicts we put {card as exampleName}
+import {products} from '../data/products.js';
 
 let productsHTML = '';
 
