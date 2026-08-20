@@ -5,18 +5,31 @@ import {loadCart} from '../data/cart.js'
 //import '../data/cart-class.js';
 //import '../data/backend-practice.js';
 
-Promise.all([ // better Promise feature  
-// similar to Jasmine done function
-  loadProductsFetch(),
-  new Promise((resolve) => {
+async function loadPage() {
+  await loadProductsFetch();
+
+  const value = new Promise((resolve) => {
     loadCart(() => {
-      resolve();
+      resolve('value3');
     });
-  })
-]).then((values) => {
+  });
   renderOrderSummary();
   renderPaymentSummary();
-});
+}
+loadPage();
+
+// Promise.all([ // better Promise feature  
+// // similar to Jasmine done function
+//   loadProductsFetch(),
+//   new Promise((resolve) => {
+//     loadCart(() => {
+//       resolve();
+//     });
+//   })
+// ]).then((values) => {
+//   renderOrderSummary();
+//   renderPaymentSummary();
+// });
 
 //helps keep the code more flat
 // new Promise((resolve) => { // similar to Jasmine done function
